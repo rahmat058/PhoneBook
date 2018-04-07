@@ -1108,7 +1108,7 @@ var About = __webpack_require__(53);
 var routes = [{ path: '/home', component: Home }, { path: '/about', component: About }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
-  mode: 'history',
+  // mode: 'history',
   routes: routes // short for `routes: routes`
 });
 
@@ -43710,8 +43710,34 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+
+var Add = __webpack_require__(57);
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      addActive: ''
+    };
+  },
+  components: {
+    Add: Add
+  },
+  methods: {
+    addNew: function addNew() {
+      this.addActive = 'is-active';
+    },
+    close: function close() {
+      this.addActive = '';
+    }
+  }
+});
 
 /***/ }),
 /* 52 */
@@ -43721,50 +43747,72 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    [
+      _c("nav", { staticClass: "panel column is-offset-2 is-8" }, [
+        _c("p", { staticClass: "panel-heading" }, [
+          _vm._v("\n        Vue js PhoneBook\n        "),
+          _c(
+            "button",
+            {
+              staticClass: "button is-link is-outlined",
+              on: { click: _vm.addNew }
+            },
+            [_vm._v("\n          Add New\n        ")]
+          )
+        ]),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._m(1)
+      ]),
+      _vm._v(" "),
+      _c("Add", {
+        attrs: { openModal: _vm.addActive },
+        on: { closeRequest: _vm.close }
+      })
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", { staticClass: "panel column is-offset-2 is-8" }, [
-      _c("p", { staticClass: "panel-heading" }, [
-        _vm._v("\n    Vue js PhoneBook\n    "),
-        _c("button", { staticClass: "button is-link is-outlined" }, [
-          _vm._v("\n      Add New\n    ")
+    return _c("div", { staticClass: "panel-block" }, [
+      _c("p", { staticClass: "control has-icons-left" }, [
+        _c("input", {
+          staticClass: "input is-small",
+          attrs: { type: "text", placeholder: "search" }
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "icon is-small is-left" }, [
+          _c("i", { staticClass: "fa fa-search" })
         ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "panel-block" }, [
+      _c("span", { staticClass: "column is-9" }, [
+        _vm._v("\n            marksheet\n       ")
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "panel-block" }, [
-        _c("p", { staticClass: "control has-icons-left" }, [
-          _c("input", {
-            staticClass: "input is-small",
-            attrs: { type: "text", placeholder: "search" }
-          }),
-          _vm._v(" "),
-          _c("span", { staticClass: "icon is-small is-left" }, [
-            _c("i", { staticClass: "fa fa-search" })
-          ])
-        ])
+      _c("span", { staticClass: "panel-icon column is-1" }, [
+        _c("i", { staticClass: "has-text-danger fa fa-trash" })
       ]),
       _vm._v(" "),
-      _c("a", { staticClass: "panel-block" }, [
-        _c("span", { staticClass: "column is-9" }, [
-          _vm._v("\n        marksheet\n   ")
-        ]),
-        _vm._v(" "),
-        _c("span", { staticClass: "panel-icon column is-1" }, [
-          _c("i", { staticClass: "has-text-danger fa fa-trash" })
-        ]),
-        _vm._v(" "),
-        _c("span", { staticClass: "panel-icon column is-1" }, [
-          _c("i", { staticClass: "has-text-info fa fa-edit" })
-        ]),
-        _vm._v(" "),
-        _c("span", { staticClass: "panel-icon column is-1" }, [
-          _c("i", { staticClass: "has-text-primary fa fa-eye" })
-        ])
+      _c("span", { staticClass: "panel-icon column is-1" }, [
+        _c("i", { staticClass: "has-text-info fa fa-edit" })
+      ]),
+      _vm._v(" "),
+      _c("span", { staticClass: "panel-icon column is-1" }, [
+        _c("i", { staticClass: "has-text-primary fa fa-eye" })
       ])
     ])
   }
@@ -46515,6 +46563,138 @@ if (inBrowser && window.Vue) {
 
 /* harmony default export */ __webpack_exports__["a"] = (VueRouter);
 
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(9)
+/* script */
+var __vue_script__ = __webpack_require__(58)
+/* template */
+var __vue_template__ = __webpack_require__(59)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\Add.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-075f610c", Component.options)
+  } else {
+    hotAPI.reload("data-v-075f610c", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 58 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['openModal'],
+  methods: {
+    closeModal: function closeModal() {
+      this.$emit('closeRequest');
+    }
+  }
+});
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "modal", class: _vm.openModal }, [
+    _c("div", { staticClass: "modal-background" }),
+    _vm._v(" "),
+    _c("div", { staticClass: "modal-card" }, [
+      _c("header", { staticClass: "modal-card-head" }, [
+        _c("p", { staticClass: "modal-card-title" }, [_vm._v("Modal title")]),
+        _vm._v(" "),
+        _c("button", {
+          staticClass: "delete",
+          attrs: { "aria-label": "close" },
+          on: { click: _vm.closeModal }
+        })
+      ]),
+      _vm._v(" "),
+      _c("section", { staticClass: "modal-card-body" }),
+      _vm._v(" "),
+      _c("footer", { staticClass: "modal-card-foot" }, [
+        _c("button", { staticClass: "button is-success" }, [
+          _vm._v("Save changes")
+        ]),
+        _vm._v(" "),
+        _c("button", { staticClass: "button", on: { click: _vm.closeModal } }, [
+          _vm._v("Cancel")
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-075f610c", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
