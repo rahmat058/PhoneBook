@@ -7,12 +7,11 @@
 
 
    <div class="navbar-menu is-active">
-     <a class="navbar-item" href="#">
-        Home
-     </a>
-     <a class="navbar-item" href="#">
-        About
-     </a>
+
+     <router-link to="/home" class="navbar-item">Home</router-link>
+
+     <router-link to="/about" class="navbar-item">About</router-link>
+
    </div>
 
    <div class="navbar-burger">
